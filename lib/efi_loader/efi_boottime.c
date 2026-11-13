@@ -2244,6 +2244,8 @@ static efi_status_t EFIAPI efi_exit_boot_services(efi_handle_t image_handle,
 		bootm_disable_interrupts();
 		if (IS_ENABLED(CONFIG_DM_ETH))
 			eth_halt();
+		if (env_get_yesno("sheng_efi_display_teardown") == 1)
+			board_preboot_os();
 		board_quiesce_devices();
 		dm_remove_devices_active();
 	}
