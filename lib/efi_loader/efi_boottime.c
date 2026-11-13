@@ -8,6 +8,7 @@
 #define LOG_CATEGORY LOGC_EFI
 
 #include <bootm.h>
+#include <env.h>
 #include <div64.h>
 #include <dm/device.h>
 #include <dm/root.h>
